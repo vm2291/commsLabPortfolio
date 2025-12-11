@@ -1,0 +1,891 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root{
+    --green:#27ae60;
+    --page-gray: #eee;
+    --surface-white: #fafbfc; /* soft off-white surface color */
+    --surface-muted: #f6f7f8; /* slightly darker muted surface */
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+/* Global paragraph / text styling for most descriptive copy */
+p,
+.lead,
+.info,
+.highlights li,
+.services .box-container .box p,
+.blogs .box-container .box p,
+.contact .row form .box,
+.contact .row form textarea {
+    font-size: 1.7rem;
+    line-height: 1.8;
+    color: #333;
+    font-weight: 400;
+    text-transform: none;
+}
+
+/* Headings and main home title stay uppercase */
+.heading,
+.home .content h3 {
+    text-transform: uppercase;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+html::-webkit-scrollbar{
+    width:.7rem;
+}
+
+html::-webkit-scrollbar-track{
+    background:#fff;
+}
+
+html::-webkit-scrollbar-thumb{
+    background:var(--green);
+}
+
+body{
+    background:#eee;
+    padding-right: 5rem;
+}
+
+/* Home section spacing and minimum height */
+section.home {
+    padding:2rem 9%;
+    min-height: 100vh;
+    /* no custom background here so it uses the page background */
+}
+
+/* Main section headings */
+.heading{
+    text-align: center;
+    padding-bottom: 4rem;
+    font-size: 6rem;
+    text-transform: uppercase;
+    color:#222; /* dark gray that works on light backgrounds */
+}
+
+/* Contact heading needs less bottom padding to tighten layout */
+.contact .heading{
+    padding-bottom: 0rem;
+}
+
+.heading span{
+    text-transform: uppercase;
+    color:var(--green);
+}
+
+/* Generic button styling */
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    padding:.8rem 3rem;
+    background:#222;
+    color:#fff;
+    font-size: 1.7rem;
+    cursor: pointer;
+    border-radius: 0.6rem;
+}
+
+.btn:hover{
+    background:var(--green);
+    letter-spacing: .2rem;
+}
+
+/* Fixed header / navbar at the top of the screen */
+header{
+    position: fixed;
+    top:0; left:0;
+    width:100%;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:#fff;
+    z-index: 1000;
+    padding: 0 2rem;
+        display: grid;
+        /* original template code: grid layout (not actively used now) */
+        grid-template-columns: repeat(2, minmax(320px, 1fr));
+        gap: 1.2rem; /* example gap from original layout */
+        /* cards would stretch to fill columns in the original template */
+        justify-items: stretch;
+        /* align items to the top in the original grid usage */
+        align-items: start;
+        padding-bottom: 0rem;
+    writing-mode: horizontal-tb;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 0;
+}
+
+/* Navbar links inside the header */
+header .navbar a{
+    padding: .8rem 1.2rem;
+    font-size: 1.6rem;
+    color:#222;
+}
+
+header .navbar a:hover{
+    color:var(--green);
+}
+
+/* Mobile menu icon (hamburger) */
+#menu-bars{
+    position: fixed;
+    z-index: 10000;
+    top:1rem; left:1rem;
+    padding:1rem 1.5rem;
+    border-radius: .5rem;
+    color:#fff;
+    background: var(--green);
+    cursor: pointer;
+    font-size: 3rem;
+    display: none;
+}
+
+/* Home section layout and particle overlay */
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Canvas area where Particles.js draws */
+.home #particles-js{
+    position: absolute;
+    top:0; left:0;
+    height:100%;
+    width:100%;
+}
+
+/* Light overlay layer (kept empty, but available if needed) */
+.home::before{
+    content: '';
+    position: absolute;
+    top:0; left:0;
+    height:100%;
+    width:100%;
+}
+
+/* Content on top of the particles */
+.home .content{
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Circular portrait on the home section */
+.home .content img{
+    height: 25rem;
+    width:25rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border:1rem solid var(--green);
+}
+
+/* Name in Hero section */
+.home .content h3{
+    font-size: 4rem;
+    color: #222;
+    text-transform: uppercase;
+}
+
+.home .content h3 span{
+    color:#222;
+    text-transform: uppercase;
+}
+
+/* Hero subtitle / typing text */
+.home .content p{
+    color:#222;
+    font-size: 2.5rem;
+    line-height: 2;
+}
+
+/* About section wrapper */
+.about {
+    background: transparent;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+/* Centered container for About section */
+.about .container{
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 1.5rem;
+}
+
+/* 2-column layout for About on large screens */
+.about .row{
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 3.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Image column */
+.about .row .image{
+    text-align: center;
+}
+
+/* About image styling */
+.about .row .image img{
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    border-radius: .8rem;
+    border: .8rem solid #fff;
+    box-shadow: 0 .8rem 1.6rem rgba(39,174,96,0.08);
+    object-fit: cover;
+}
+
+/* About text column */
+.about .row .content{
+    padding: 0;
+}
+
+/* About heading (inside content) */
+.about .row .content h3{
+    color:#222;
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+    text-transform: none;
+}
+
+/* Highlighted part of About heading */
+.about .row .content h3 span{
+    color:var(--green);
+    text-transform: none;
+    font-weight: 700;
+}
+
+/* Main About paragraph */
+.about .row .content .lead{
+    color:#444;
+    font-size: 1.8rem;
+    line-height: 1.7;
+    margin-bottom: 1.6rem;
+    max-width: 60ch;
+}
+
+/* Short highlights list under About text */
+.about .row .content .highlights{
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.6rem 0;
+}
+
+.about .row .content .highlights li{
+    font-size: 1.6rem;
+    color:#333;
+    margin: .6rem 0;
+    padding-left: 2.6rem;
+    position: relative;
+}
+
+/* subtle check icon using pseudo-element */
+/* (original tick icon removed; structure kept if needed later) */
+
+/* Skill tags under About */
+.about .row .content .skills{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0rem;
+    margin-bottom: 0rem;
+}
+
+/* Individual skill chip */
+.about .row .content .skill{
+    display: inline-block;
+    background: #fff;
+    padding: .5rem .9rem;
+    border-radius: 999px;
+    font-size: 1.5rem;
+    color:#222;
+    box-shadow: 0 .2rem .6rem rgba(0,0,0,.06);
+    border: .1rem solid rgba(0,0,0,.04);
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    -ms-border-radius: 999px;
+    -o-border-radius: 999px;
+}
+
+/* Buttons inside About section (View projects / Contact) */
+.about .row .content .actions{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: .8rem;
+}
+
+.about .row .content .btn{
+    padding:.8rem 2.2rem;
+    font-size: 1.6rem;
+    border-radius: .6rem;
+}
+
+/* Secondary button style in About section */
+.about .row .content .btn.outline{
+    background: transparent;
+    color: var(--green);
+    border: .2rem solid var(--green);
+}
+
+/* =========================================
+   RESPONSIVE: About section at <= 991px
+   ========================================= */
+@media (max-width:991px){
+
+    /* Stack About columns vertically on smaller screens */
+    .about .row{
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .about .row .content h3{
+        font-size: 2.6rem;
+    }
+
+    .about .row .content .lead{
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 80ch;
+    }
+
+    .about .row .content .highlights li{
+        padding-left: 1.6rem;
+        font-size: 1.5rem;
+    }
+
+    .about .row .content .skills{
+        justify-content: center;
+    }
+
+    .about .row .image img{
+        max-width: 320px;
+    }
+}
+
+/* SKILLS / SERVICES SECTION */
+.services .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+}
+
+.services .box-container .box{
+    flex:1 1 30rem;
+    border-radius: .5rem;
+    background:#fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    padding:2rem;
+    text-align: center;
+}
+
+.services .box-container .box i{
+    color:var(--green);
+    font-size: 5rem;
+    padding:1rem 0;
+}
+
+.services .box-container .box h3{
+    color:#222;
+    font-size: 2.5rem;
+    padding-top:1rem;
+}
+
+.services .box-container .box p{
+    color:#333;
+    font-size:1.7rem;
+    padding:1rem 0;
+    line-height: 2;
+}
+
+/* (Original portfolio section styles from template, not used on this page) */
+.portfolio .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+}
+
+.portfolio .box-container .box{
+    flex:1 1 30rem;
+    border-radius: .5rem;
+    border:1rem solid #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    position: relative;
+    overflow:hidden;
+    height:25rem;
+}
+
+.portfolio .box-container .box img{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+}
+
+.portfolio .box-container .box .content{
+    height: 100%;
+    width:100%;
+    position: absolute;
+    top:0; left:-100%;
+    background:#fff9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio .box-container .box:hover .content{
+    left:0;
+}
+
+/* BLOG / PROJECTS cards (base styles from template, some overridden later) */
+.blogs .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    margin-bottom: 0rem;
+}
+
+.blogs .box-container .box{
+    flex: 1 1 30rem;
+    border-radius: .5rem;
+    background:#fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    padding:2rem;
+}
+
+.blogs .box-container .box img{
+    height:20rem;
+    width:100%;
+    border-radius: .5rem;
+    object-fit: cover;
+}
+
+.blogs .box-container .box h3{
+    color:var(--green);
+    font-size: 2.5rem;
+    padding:.5rem 0;
+}
+
+.blogs .box-container .box p{
+    color:#666;
+    font-size: 1.5rem;
+    padding:.5rem 0;
+}
+
+/* CONTACT SECTION */
+.contact .row{
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:1.5rem;
+}
+
+.contact .row .image{
+    flex:1 1 40rem;
+}
+
+.contact .row .image img{
+    width: 100%;
+}
+
+.contact .row form{
+    flex:1 1 40rem;
+    padding:1rem 2rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    border-radius: .5rem;
+    background:#fff;
+}
+
+/* Form layout: name + email on one row on larger screens */
+.contact .row form .inputBox{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Inputs and textarea inside the contact form */
+.contact .row form .inputBox input,
+.contact .row form .box,
+.contact .row form textarea{
+    width:100%;
+    border-radius: .5rem;
+    font-size: 1.7rem;
+    color:#333;
+    padding:1rem;
+    margin:1rem 0;
+    border:.1rem solid rgba(0,0,0,.1);
+    text-transform: none;
+}
+
+/* Form focus state */
+.contact .row form .inputBox input:focus,
+.contact .row form .box:focus,
+.contact .row form textarea:focus{
+    border-color: var(--green);
+}
+
+/* Place name and email side by side at larger widths */
+.contact .row form .inputBox input{
+    width:49%;
+}
+
+/* Fixed height for the message textarea */
+.contact .row form textarea{
+    height:20rem;
+    resize: none;
+}
+
+.contact .row form .btn{
+    margin:.5rem 0;
+    border-radius: 0.6rem;
+}
+
+/* Footer styling */
+.footer{
+    padding:2.5rem;
+    font-size: 2rem;
+    color:#666;
+    background:#fff;
+    text-align: center;
+}
+
+.footer span{
+    color:var(--green);
+}
+
+/* ========================
+   Section backgrounds / layout
+   ======================== */
+section.about {
+    background: var(--surface-white);
+    box-shadow: 0 4px 24px -12px rgba(0,0,0,0.04);
+}
+section.services {
+    background: var(--page-gray);
+    width: 100vw;
+    padding: 5rem 12rem;
+}
+
+section.blogs {
+    background: var(--surface-white);
+    box-shadow: 0 4px 24px -12px rgba(0,0,0,0.04);
+}
+section.contact {
+    background: var(--page-gray);
+    width: 97vw;
+    padding: 5rem 12rem 0rem 12rem;
+    min-height: auto;
+}
+
+/* Reset About/Blogs section widths to normal container style */
+section.about,
+section.blogs {
+    width: auto;
+    position: static;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 9%;
+    padding-right: 9%;
+}
+
+/* Stretch About/Blogs background to full viewport width while keeping inner content centered */
+section.about,
+section.blogs {
+    background: var(--surface-white);
+    box-shadow: 0 4px 24px -12px rgba(0,0,0,0.04);
+    width: 102vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Extra padding and full-width for projects section */
+section.blogs {width: 104vw; padding: 5rem 15rem}
+
+/* Center the inner container for About and Blogs */
+section.about .container,
+section.blogs .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 9%;
+    background: transparent;
+}
+
+/* About image frame uses muted background color */
+section.about .about .row .image img {
+    border: .8rem solid var(--surface-muted);
+}
+
+/* Skill chips in About section get a softer background */
+section.about .about .row .content .skill {
+    background: var(--surface-muted);
+    box-shadow: 0 .1rem .3rem rgba(0,0,0,.02);
+    border: .05rem solid #e0e0e0;
+}
+
+/* ========================
+   PROJECTS (blogs) layout
+   ======================== */
+
+section.blogs .box-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    justify-items: center;
+    align-items: stretch;
+    padding-bottom: 0rem;
+}
+
+/* Individual project card */
+section.blogs .box-container .box {
+    background: #fff;
+    box-shadow: 0 2px 12px -4px rgba(0,0,0,0.10);
+    border: 1px solid #eaeaea;
+    border-radius: .8rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+        /* let each card fill its grid column */
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem;
+}
+
+/* Hover elevation effect for project cards */
+section.blogs .box-container .box:hover {
+    box-shadow: 0 8px 32px -8px rgba(39,174,96,0.13), 0 2px 8px -2px rgba(0,0,0,0.07);
+    transform: translateY(-4px) scale(1.02);
+}
+
+/* Project thumbnail image */
+section.blogs .box-container .box img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: .5rem;
+    border: none;
+    box-shadow: 0 2px 8px -2px rgba(0,0,0,0.06);
+    margin-bottom: 1.2rem;
+    background: #f6f7f8;
+}
+
+/* Project title */
+section.blogs .box-container .box h3 {
+    color: var(--green);
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin-bottom: .6rem;
+    text-align: left;
+    width: 100%;
+}
+
+/* Project description text */
+section.blogs .box-container .box p {
+    color: #666;
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    width: 100%;
+    text-align: left;
+}
+
+/* View button inside project cards */
+section.blogs .box-container .box .btn {
+    background: var(--green);
+    color: #fff;
+    border-radius: .4rem;
+    font-size: 1.5rem;
+    padding: .6rem 2rem;
+    margin-top: auto;
+    align-self: flex-start;
+    box-shadow: 0 2px 8px -2px rgba(39,174,96,0.08);
+    border: none;
+}
+
+section.blogs .box-container .box .btn:hover {
+    background: #222;
+}
+
+section.blogs{
+    min-height: auto;
+}
+
+/* =========================================
+   RESPONSIVE: Projects / services at <= 991px
+   ========================================= */
+@media (max-width: 991px) {
+    section.blogs {padding: 5rem 3rem; width: 100vw;}
+    section.services, section.contact {width: 100vw; padding: 5rem 3rem}
+    section.blogs .box-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    section.blogs .box-container .box {
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .about .row .content .actions{
+        justify-content: center;
+    }
+
+    /* Make project images shorter on medium screens so cards feel lighter */
+    section.blogs .box-container .box img {
+        height: 150px;        /* smaller image height */
+        object-fit: cover;    /* keep proportions */
+    }
+}
+
+/* Extra small screen tweaks */
+@media (max-width: 600px) {
+    section.blogs .box-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+    section.blogs .box-container .box {
+        max-width: 98vw;
+        min-width: 0;
+        padding: 2.5rem;
+    }
+}
+
+/* =========================================
+   GLOBAL responsive settings at <= 991px
+   ========================================= */
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    body{
+        padding-right: 0;
+    }
+    
+    section{
+        padding:2rem;
+    }
+
+    /* Make header slide in from the left on mobile (drawer-style menu).
+       The header is moved off-screen until the 'active' class is added. */
+    header{
+        left: -120%;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background: #fff;
+        padding-top: 6.5rem; /* leave space for the menu button */
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.08);
+    }
+
+    header.active{
+        left: 0;
+    }
+
+    /* Show the hamburger icon on smaller screens */
+    #menu-bars{
+        display: initial;
+    }
+
+    /* Stack nav links vertically and increase tap area */
+    header .navbar{
+        writing-mode: horizontal-tb;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: stretch;
+        padding: 1.5rem;
+        width: 100%;
+    }
+
+    header .navbar a{
+        display: block;
+        padding: 1.2rem 1.6rem;
+        font-size: 2.6rem;
+        color:#222;
+        width: 100%;
+        border-radius: .4rem;
+    }
+
+    header .navbar a:hover{
+        color: #fff;
+        background: var(--green);
+    }
+
+    header .navbar a + a{
+        margin-top: .3rem;
+    }
+
+    header .navbar a:active{
+        transform: none;
+    }
+
+}
+
+/* Very small devices */
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+    .heading{
+        font-size: 4rem;
+    }
+
+    .contact .row form .inputBox input{
+        width:100%;
+    }
+
+}
+
+/* Custom icon colors for skills section */
+.services .box-container .box .fa-lightbulb {
+    color: #FFD600; /* yellow for lightbulb icon */
+}
+.services .box-container .box .fa-wordpress {
+    color: #21759B; /* WordPress blue */
+}
+.services .box-container .box .fa-code {
+    color: #c75f5f; 
+}
+.services .box-container .box .fa-bullhorn {
+    color: #E67E22; /* orange */
+}
+.services .box-container .box .fa-paint-brush {
+    color: #9B59B6; /* purple */
+}
+.services .box-container .box .fa-bars {
+    color: #4c529c; /* dark blue/gray */
+}

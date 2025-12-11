@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Ensures good rendering in older versions of Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Makes the layout responsive on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+
+    <!-- Font Awesome icons (used in the skills section) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Main stylesheet for the portfolio -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+<!-- ======================== HEADER / NAVBAR ======================== -->
+<header>
+
+    <!-- Hamburger menu icon for mobile navigation -->
+    <div id="menu-bars" class="fas fa-bars"></div>
+
+    <!-- Main navigation links (scroll to different sections of the page) -->
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Skills</a>
+        <a href="#blogs"> Projects </a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+<!-- ======================== HERO / HOME SECTION ======================== -->
+<section class="home" id="home">
+
+    <!-- Particles.js background effect (configured in app.js) -->
+    <div id="particles-js"></div>
+
+    <!-- Intro content in the center of the hero section -->
+    <div class="content">
+        <img class="tilt" src="images/home-pic.png" alt="">
+        <h3> Vlera <span>Mehani</span> </h3>
+        <p> A <span class="typing-text"> WEB DEVELOPER </span> </p>
+        <!-- Button that scrolls down to the About section -->
+        <a href="#about" class="btn">About Me</a>
+    </div>
+
+</section>
+
+<!-- ======================== ABOUT SECTION ======================== -->
+<section class="about" id="about">
+
+    <div class="container">
+        <h1 class="heading"> about <span>me</span> </h1>
+
+        <div class="row">
+            <!-- Portrait / illustration -->
+            <div class="image">
+                <img class="tilt" src="images/about-pic.jpg" alt="Vlera Mehani">
+            </div>
+
+            <!-- Short bio and “view projects” button -->
+            <div class="content">
+
+                <p class="lead">
+                    I usually live in the clouds of my imagination, fondly escaping reality. I like to challenge
+                    the status quo and not settle for the ordinary. I speak Albanian, English, Turkish, and a bit of German, which helps me connect with different people and understand diverse perspectives.
+                    I bring curiosity and persistence to every project and offer practical, usable solutions.
+                    If you'd like to see examples of my work, please check the projects section.
+                </p>
+
+                <div class="actions">
+                    <!-- Button that jumps directly to the Projects section -->
+                    <a href="#blogs" class="btn">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- ======================== SKILLS / SERVICES SECTION ======================== -->
+<section class="services" id="services">
+
+    <h1 class="heading"> <span> my </span> skills </h1>
+
+    <div class="box-container">
+
+        <!-- Each box describes one skill area with an icon and short text -->
+        <div class="box tilt">
+            <i class="fas fa-code"></i>
+            <h3>Web Development</h3>
+           <p>Full-stack web development: front-end and back-end work using HTML, CSS and JavaScript (and server-side tools).</p>
+        </div>
+
+        <div class="box tilt">
+            <i class="fas fa-lightbulb"></i>
+            <h3>UI/UX Design</h3>
+            <p>Design user interfaces and experiences with attention to usability and accessibility.</p>
+        </div>
+
+        <div class="box tilt">
+            <i class="fas fa-bullhorn"></i>
+            <h3>Digital Marketing</h3>
+            <p>Plan and run digital campaigns (Meta, Google, LinkedIn); perform market research and social media audits.</p>
+        </div>
+
+        <div class="box tilt">
+            <i class="fas fa-paint-brush"></i>
+            <h3>Graphic Design</h3>
+          <p>Design logos, posters and graphics for social media or print.</p>
+        </div>
+
+        <div class="box tilt">
+            <i class="fas fa-bars"></i>
+            <h3> Tutoring</h3>
+        <p>One-to-one tutoring across several subjects, including web technologies and math.</p>
+        </div>
+
+        <div class="box tilt">
+            <i class="fab fa-wordpress"></i>
+            <h3>WordPress</h3>
+         <p>Build and configure websites with WordPress; theme setup and content integration.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================== PROJECTS / BLOGS SECTION ======================== -->
+<section class="blogs" id="blogs">
+
+    <h1 class="heading"> <span> my </span> projects </h1>
+
+    <!-- Grid of project cards. Each card links to a separate assignment website -->
+    <div class="box-container">
+        
+        <div class="box tilt">
+            <img src="images/img1.png" alt="">
+            <h3> The Art of Noticing </h3>
+            <p> A short film that invites viewers to slow down and appreciate small details around the NYU Abu Dhabi campus. Through extremly close-up shots, natural sounds, and simple storytelling, the project highlights the beauty of everyday moments that are often overlooked. </p>
+            <a href="https://vm2291.github.io/assignment1CommsLabVlera/" class="btn"> View </a>
+        </div>
+
+        <div class="box tilt">
+            <img src="images/img2.png" alt="">
+            <h3> Study Wars </h3>
+            <p> An interactive comic about a student battling procrastination and distractions, designed in a fun video-game style. Through drawings, animations, and simple choices, users explore different paths while experiencing the struggle between study goals and time pressure.</p>
+            <a href="https://vm2291.github.io/ComicAssignmentCommsLab/" class="btn"> View </a>
+        </div>
+
+        <div class="box tilt">
+            <img src="images/img3.png" alt="">
+            <h3> The Free Throw </h3>
+            <p> An immersive sound story about pressure and focus during the final seconds of a basketball game. It follows a player at the free-throw line, blending the loud energy of the crowd with his quiet inner thoughts. The listener experiences different outcomes, showing how sound alone can tell a powerful story about resilience.</p>
+            <a href="https://khatirak.github.io/sound_assignment/" class="btn"> View </a>
+        </div>
+
+        <div class="box tilt">
+            <img src="images/img4.png" alt="">
+            <h3> Laundry </h3>
+            <p> A short film that turns a simple campus moment, doing laundry, into an interactive video story. Viewers make choices that lead to different outcomes, showing how a small problem can quickly grow. The project combines filming, editing, and web interactivity to create a playful branching narrative. </p>
+            <a href="https://kimshota.github.io/laundry-story/" class="btn"> View </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================== CONTACT SECTION ======================== -->
+<section class="contact" id="contact">
+
+    <h1 class="heading"> contact <span> me </span> </h1>
+
+    <div class="row">
+
+        <!-- Illustration on the left -->
+        <div class="image">
+            <img class="tilt" src="images/contact-img.svg" alt="">
+        </div>
+
+        <!-- Simple contact form (non-functional; no backend) -->
+        <form action="">
+
+            <div class="inputBox">
+                <input type="text" placeholder="name">
+                <input type="email" placeholder="email">
+            </div>
+
+            <input type="text" placeholder="subject" class="box">
+
+            <textarea placeholder="message" name="" id="" cols="30" rows="10"></textarea>
+
+            <input type="submit" class="btn" value="send message">
+
+        </form>
+
+    </div>
+
+</section>
+
+ <!-- ======================== SCRIPTS ======================== -->
+
+    <!-- Typed.js: animates the changing text in the hero section -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
+    <!-- VanillaTilt: small 3D tilt effect for cards and images -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+    <!-- Particles.js: background particles effect on the home section -->
+    <script src="js/particles.min.js"></script>
+
+    <!-- Your custom JS (menu, typed text, tilt, particles config) -->
+    <script src="js/app.js"></script>
+
+</body>
+</html>
